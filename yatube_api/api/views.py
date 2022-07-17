@@ -12,6 +12,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     pagination_class = MyLimitOffsetPagination
+    permission_classes = (IsOwnerOrReadOnly, )
 
 
 class PostViewSet(viewsets.ModelViewSet):
