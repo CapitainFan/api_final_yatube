@@ -43,7 +43,9 @@ class Comment(models.Model):
     )
 
     def __str__(self):
-        return f'"{self.text}" to post "{self.post}" by author "{self.author}"'
+        return '"{}" to post "{}" by author "{}"'.format(self.text,
+                                                         self.post,
+                                                         self.author)
 
 
 class Follow(models.Model):
