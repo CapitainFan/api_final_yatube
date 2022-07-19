@@ -43,9 +43,7 @@ class Comment(models.Model):
     )
 
     def __str__(self):
-        return '"{}" to post "{}" by author "{}"'.format(self.text,
-                                                         self.post,
-                                                         self.author)
+        return f'"{self.text}" to post "{self.post}" by author "{self.author}"'
 
 
 class Follow(models.Model):
@@ -65,4 +63,4 @@ class Follow(models.Model):
         ]
 
     def __str__(self):
-        return '{} follows {}'.format(self.user, self.following)
+        return f'{self.user} follows {self.following}'
